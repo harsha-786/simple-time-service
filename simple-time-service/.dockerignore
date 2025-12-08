@@ -1,0 +1,13 @@
+
+.git
+.gitignore
+**/*.log
+__pycache__/
+*.pyc
+*.pyo
+.env
+.vscode
+.idea
+dist
+out
+build
