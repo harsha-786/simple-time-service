@@ -21,8 +21,9 @@ ENV PYTHONDONTWRITEBYTECODE=1     PYTHONUNBUFFERED=1     PATH="/opt/venv/bin:$PA
 RUN groupadd -r app && useradd -r -g app -u 10001 app
 
 WORKDIR /app
-COPY --from=builder /opt/venv /opt/venv
-COPY --from=builder /tmp/build/simple_time_service /app/simple_time_service
+COPY --from=builder --chown=10001:10001 /opt/venv /opt/venv
+COPY --from=builder --chown=10001:10001 /tmp/build/simple_time_service /app/simple_time_service
+RUN chmod -R a+rX /app /opt/venv
 
 USER 10001:10001
 
