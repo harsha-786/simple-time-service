@@ -50,9 +50,11 @@ After apply, Terraform prints:
 - `service_url` – convenience URL
 
 Test the service:
+
 ```bash
 terraform output -raw service_url
-now run the below command to get the respone
+```
+```bash
 curl $(terraform output -raw service_url)
 ```
 Expected JSON:
