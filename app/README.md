@@ -4,6 +4,7 @@ A minimal web service that returns the current UTC timestamp and the requestor's
 
 ## Prerequisites
 - [Docker](https://docs.docker.com/get-docker/)
+- jq (for formatting JSON output in test commands)
 
 ## Response
 `GET /`
