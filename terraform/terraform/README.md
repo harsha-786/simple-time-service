@@ -51,6 +51,8 @@ After apply, Terraform prints:
 
 Test the service:
 ```bash
+terraform output -raw service_url
+
 curl $(terraform output -raw service_url)
 ```
 Expected JSON:
