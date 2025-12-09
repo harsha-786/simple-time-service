@@ -17,11 +17,23 @@ Container used: `harsha786docker/simple-time-service:1.0.1` listening on port `8
 ```
 
 ## Prerequisites
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- AWS CLI
+
+### AWS Authentication
+Before running Terraform, configure AWS credentials:
+```bash
+aws configure
+# OR for SSO:
+aws configure sso
+aws sts get-caller-identity
+```
 - Terraform `>= 1.6`
 - AWS credentials configured **outside the repo** (no secrets committed):
   - via AWS CLI `aws configure` (default profile), or
   - environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`
 - Optional: set a specific profile using `-var aws_profile=...`
+- jq (for formatting JSON output in test commands)
 
 ## Variables & defaults
 See `variables.tf` and `terraform.tfvars` for defaults:
