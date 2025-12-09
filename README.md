@@ -35,6 +35,7 @@ This repository contains two tasks:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Terraform](https://developer.hashicorp.com/terraform/downloads)
 - AWS CLI
+- jq (for formatting JSON output in test commands)
 
 ### AWS Authentication
 Before running Terraform, configure AWS credentials:
