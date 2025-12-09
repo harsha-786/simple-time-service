@@ -2,6 +2,9 @@
 
 A minimal web service that returns the current UTC timestamp and the requestor's IP address as **pure JSON**.
 
+## Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
+
 ## Response
 `GET /`
 ```json
