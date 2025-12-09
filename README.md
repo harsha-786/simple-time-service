@@ -10,7 +10,6 @@ This repository contains two tasks:
 - **Task 1:** Develop a simple web service that returns the current timestamp and client IP in JSON format, containerize it using Docker, and publish the image.
 - **Task 2:** Provision AWS infrastructure using Terraform to host the containerized application behind a load balancer.
 
-** You can refer to README.md files in app/ and terraform/ for each tasks
 ---
 
 ## **Repository Structure**
@@ -32,6 +31,20 @@ This repository contains two tasks:
 ```
 
 ---
+## Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- AWS CLI
+
+### AWS Authentication
+Before running Terraform, configure AWS credentials:
+```bash
+aws configure
+# OR for SSO:
+aws configure sso
+aws sts get-caller-identity
+```
+** You can refer to README.md files in app/ and terraform/ for each tasks
 
 ## **Task 1: Minimalist Application Development & Docker**
 
