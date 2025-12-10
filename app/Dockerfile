@@ -30,3 +30,9 @@ USER 10001:10001
 EXPOSE 8080
 ENV PORT=8080
 ENTRYPOINT ["python", "-m", "simple_time_service.main"]
+
+### Health check for the application
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
+
