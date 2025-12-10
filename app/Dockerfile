@@ -33,6 +33,11 @@ ENTRYPOINT ["python", "-m", "simple_time_service.main"]
 
 ### Health check for the application
 
+
+# Container health check: returns healthy if "/" responds with HTTP 200
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
+  CMD python -c "import os,urllib.request,sys; \
+    urllib.request.urlopen(f'http://127.0.0.1:{os.environ.get(\"PORT\",\"8080\")}') \
+    and sys.exit(0)" || exit 1
+
 
