@@ -45,8 +45,8 @@ sudo usermod -aG docker $USER
 ```bash
 newgrp docker
 ```
-After this, you can run Docker commands without sudo.
-Note: This is a host-level permission fix. Inside the container, the app still runs as a non-root user (UID 10001).
+**After this, you can run Docker commands without sudo.
+Note: This is a host-level permission fix. Inside the container, the app still runs as a non-root user (UID 10001).**
 ---
 ## Check Container Health
 The container includes a HEALTHCHECK. 
