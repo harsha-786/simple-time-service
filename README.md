@@ -45,9 +45,9 @@ aws configure
 aws configure sso
 aws sts get-caller-identity
 ```
-**Note: For detailed instructions:
+# Note: For detailed instructions:
 - Task 1 → See app/README.md
-- Task 2 → See terraform/README.md**
+- Task 2 → See terraform/README.md
 
 ## **Task 1: Minimalist Application Development & Docker**
 
