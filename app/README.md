@@ -31,7 +31,33 @@ curl -s http://localhost:8080/ | jq .
 Environment:
 - `PORT` (optional, default: `8080`)
 
+## Troubleshooting: Docker Permissions
+If you see errors like:
+```bash
+Got permission denied while trying to connect to the Docker daemon socket
+```
+It means your user is not part of the docker group. You can fix this by adding your user to the group:
+# Add current user to docker group
+```bash
+sudo usermod -aG docker $USER
+```
+# Apply changes without logout
+```bash
+newgrp docker
+```
+After this, you can run Docker commands without sudo.
+Note: This is a host-level permission fix. Inside the container, the app still runs as a non-root user (UID 10001).
 ---
+## Check Container Health
+The container includes a HEALTHCHECK. 
+To verify use below command in another terminal:
+```bash
+docker ps
+```
+Look for STATUS:
+```bash
+Up 2 minutes (healthy)
+```
 
 ## Container Best Practices
 
